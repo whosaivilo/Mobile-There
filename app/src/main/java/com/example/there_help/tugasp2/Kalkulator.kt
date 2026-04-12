@@ -1,4 +1,4 @@
-package com.example.there_help
+package com.example.there_help.tugasp2
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.there_help.R
 
 class Kalkulator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
