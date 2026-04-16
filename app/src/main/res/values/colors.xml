@@ -5,5 +5,9 @@
     <color name="biru">#0C307F</color>
     <color name="abu">#BFC9D1</color>
     <color name="garis">#E0E0E0</color>
+    <color name="bg">#FFF8EC</color>
+    <color name="warning">#F77F00</color>
+    <color name="background">#D1E9F6</color>
+
 
 </resources>

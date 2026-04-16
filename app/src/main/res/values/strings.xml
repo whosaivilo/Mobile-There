@@ -10,4 +10,13 @@
     <string name="pemisah">Or</string>
     <string name="btn_google">Lanjutkan dengan Google</string>
     <string name="regis">Register</string>
+    <string name="nama">KASPRO</string>
+    <string name="judul">Halo, Toko Kopi Sejahtera! </string>
+    <string name="sub_judul">Cek kesehatan finansial tokomu hari ini</string>
+    <string name="skor">SKOR KESEHATAN FINANSIAL</string>
+    <string name="skor_judul">68</string>
+    <string name="warning">Waspada</string>
+    <string name="caption">Skor Anda sedikit menurun dibanding minggu lalu</string>
+
+
 </resources>
