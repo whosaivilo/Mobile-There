@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Therehelp">
         <activity
+            android:name=".pertemuan_3.CustomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_3.TombolActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan_3.LoginResultActivity"
             android:exported="false" />
         <activity

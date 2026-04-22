@@ -5,15 +5,75 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:padding="24dp"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvWelcome"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
+        android:text="Halo! Selamat Datang 👋"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Silakan pilih menu untuk melanjutkan aktivitasmu."
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:alpha="0.6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+    <Button
+        android:id="@+id/btnKeKalkulator"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="@color/biru"
+        android:text="Rumus Bangun Ruang"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubWelcome" />
+
+    <Button
+        android:id="@+id/btnKeResult"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/biru"
+        android:text="Cek Skor Kesehatan"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btnKeKalkulator" />
+
+    <Button
+        android:id="@+id/btnKeCustom2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/biru"
+        android:text="Halaman Custom"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btnKeResult" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/warning"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/btnKeCustom2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

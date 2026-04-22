@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.there_help.MainActivity
 import com.example.there_help.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -17,8 +18,11 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnlogin.setOnClickListener {
-            val intent = Intent(this, LoginResultActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+
+            finish()
+
         }
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
