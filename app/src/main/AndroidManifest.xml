@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Therehelp">
         <activity
-            android:name=".pertemuan_3.CustomActivity"
+            android:name=".SplashScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.TombolActivity"
+            android:name=".AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_4.CustomActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan_3.LoginResultActivity"
@@ -24,7 +27,7 @@
             android:name=".tugasp2.Kalkulator"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.LoginActivity"
+            android:name=".pertemuan_5.FifthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

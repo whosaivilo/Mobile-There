@@ -7,19 +7,20 @@
     android:layout_height="match_parent"
     android:background="@color/bg"
     android:padding="24dp"
-    tools:context=".pertemuan_3.CustomActivity">
+    tools:context=".pertemuan_4.CustomActivity">
 
     <TextView
         android:id="@+id/tvJudulHalaman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Edukasi Keuangan"
+        android:text="@string/header_edukasi"
         android:textColor="@color/warning"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardProfile"
@@ -36,14 +37,13 @@
             android:scaleType="centerCrop"
             android:src="@drawable/profil" />
     </com.google.android.material.card.MaterialCardView>
-
     <EditText
         android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="24dp"
         android:background="@color/white"
-        android:hint="Cari materi..."
+        android:hint="@string/hint_search"
         android:paddingHorizontal="16dp"
         android:textSize="14sp"
         app:layout_constraintTop_toBottomOf="@id/tvJudulHalaman" />
@@ -69,7 +69,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="100dp"
-                android:text="Judul dari Intent"
+                android:text="@string/placeholder_judul"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -82,7 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Deskripsi dari Intent"
+                android:text="@string/placeholder_desc"
                 android:textColor="@color/white"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="@id/tvFeaturedTitle"
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/white"
-                android:text="Mulai Belajar"
+                android:text="@string/btn_mulai"
                 android:textAllCaps="false"
                 android:textColor="@color/warning"
                 app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +104,7 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/artikel"
+                android:src="@drawable/artikel2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -115,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Artikel Terbaru"
+        android:text="@string/label_artikel"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"

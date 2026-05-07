@@ -14,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Halo! Selamat Datang 👋"
+        android:text="@string/judulMain"
         android:textColor="@color/black"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Silakan pilih menu untuk melanjutkan aktivitasmu."
+        android:text="@string/subjudulMain"
         android:textColor="@color/black"
         android:textSize="14sp"
         android:alpha="0.6"
@@ -41,7 +41,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="56dp"
         android:backgroundTint="@color/biru"
-        android:text="Rumus Bangun Ruang"
+        android:text="@string/menu_kalkulator"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/tvSubWelcome" />
 
@@ -51,7 +51,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/biru"
-        android:text="Cek Skor Kesehatan"
+        android:text="@string/menu_skor"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/btnKeKalkulator" />
 
@@ -61,7 +61,7 @@
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/biru"
-        android:text="Halaman Custom"
+        android:text="@string/menu_custom"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/btnKeResult" />
 
@@ -69,11 +69,12 @@
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="200dp"
         android:backgroundTint="@color/warning"
-        android:text="Logout"
+        android:text="@string/btn_logout"
         android:textAllCaps="false"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/btnKeCustom2" />
+        app:layout_constraintTop_toBottomOf="@+id/btnKeCustom2"
+        tools:layout_editor_absoluteX="24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

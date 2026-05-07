@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
+    android:background="@color/bg"
     tools:context=".tugasp2.Kalkulator">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Judul Halaman"
+        android:text="@string/placeholder_judul"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Deskripsi halaman"
+        android:text="@string/placeholder_desc"
         android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Luas Persegi"
+        android:text="@string/label_persegi"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,8 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Masukkan Sisi"
+        android:hint="@string/hint_sisi"
         android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/tvJudulPersegi" />
 
@@ -58,7 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hitung Luas"
+        android:backgroundTint="@color/biru"
+        android:text="@string/btn_hitung_luas"
         app:layout_constraintTop_toBottomOf="@+id/inputSisi" />
 
     <TextView
@@ -66,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hasil Luas: -"
+        android:text="@string/hasil_luas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHitungPersegi" />
 
@@ -75,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Volume Balok"
+        android:text="@string/label_balok"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,8 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Masukkan Panjang"
+        android:hint="@string/hint_panjang"
         android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/tvJudulBalok" />
 
@@ -96,8 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:ems="10"
-        android:hint="Masukkan Lebar"
+        android:hint="@string/hint_lebar"
         android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/inputPanjang" />
 
@@ -106,8 +105,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:ems="10"
-        android:hint="Masukkan Tinggi"
+        android:hint="@string/hint_tinggi"
         android:inputType="numberDecimal"
         app:layout_constraintTop_toBottomOf="@+id/inputLebar" />
 
@@ -116,7 +114,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hitung Volume"
+        android:backgroundTint="@color/biru"
+        android:text="@string/btn_hitung_vol"
         app:layout_constraintTop_toBottomOf="@+id/inputTinggi" />
 
     <TextView
@@ -124,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hasil Volume: -"
+        android:text="@string/hasil_vol"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnHitungBalok" />
 
