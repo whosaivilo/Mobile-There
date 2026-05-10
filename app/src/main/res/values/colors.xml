@@ -2,16 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="biru">#0C307F</color>
-    <color name="abu">#BFC9D1</color>
-    <color name="garis">#E0E0E0</color>
-    <color name="bg">#FFF8EC</color>
-    <color name="bg_secondary">#FCF9F2</color>
-    <color name="warning">#F77F00</color>
-    <color name="background">#D1E9F6</color>
-    <color name="text_dark">#333333</color>
-    <color name="bina_desa_red">#E53935</color>
-    <color name="bina_desa_dark_grey">#1A1C1E</color>
-    <color name="bina_desa_input_black">#000000</color>
 
-</resources>
+    <color name="bina_desa_red">#E53935</color>
+    <color name="bina_desa_dark">#1A1C1E</color>
+    <color name="bina_desa_card">#212429</color>
+    <color name="bina_desa_input">#000000</color>
+    <color name="bina_desa_dark_grey">#1A1C1E</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_grey">#BFC9D1</color>
+    <color name="status_proses">#F77F00</color>
+    <color name="status_selesai">#26A69A</color> </resources>

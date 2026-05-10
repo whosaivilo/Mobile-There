@@ -2,63 +2,98 @@ package com.example.there_help
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.there_help.databinding.ActivityMainBinding
-import com.example.there_help.pertemuan_4.CustomActivity
-import com.example.there_help.AuthActivity
-import com.example.there_help.pertemuan_3.LoginResultActivity
+// Import halaman lain jika beda folder (package)
 import com.example.there_help.tugasp2.Kalkulator
-
-import com.google.android.material.snackbar.Snackbar
+import com.example.there_help.pertemuan_3.LoginResultActivity
+import com.example.there_help.pertemuan_4.CustomActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Tombol 1: Navigasi ke Kalkulator dengan data
+        // --- 1. KONFIGURASI TOOLBAR ---
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "KASPRO - Home"
+        }
+
+        // --- 2. LOGIKA NAVIGASI TOMBOL (TUGAS & IMPROVISASI) ---
+
+        // Tombol ke WebView (Tugas Nomor 2)
+        binding.btnWebView.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Tombol ke Kalkulator (Tugas P2)
         binding.btnKeKalkulator.setOnClickListener {
             val intent = Intent(this, Kalkulator::class.java)
-            intent.putExtra("title", "Rumus Bangun Ruang")
-            intent.putExtra("desc", "Halaman ini digunakan untuk menghitung volume dan luas")
+            intent.putExtra("title", "Kalkulator")
+            intent.putExtra("desc", "Hitung Luas Persegi & Volume Balok")
             startActivity(intent)
         }
 
-        // Tombol 2: Navigasi ke Skor Finansial (Result Login)
+        // Tombol ke Hasil Skor (Pertemuan 3)
         binding.btnKeResult.setOnClickListener {
             val intent = Intent(this, LoginResultActivity::class.java)
-            intent.putExtra("title", "Status Finansial")
-            intent.putExtra("desc", "Cek kesehatan keuangan UMKM Anda di sini")
+            intent.putExtra("title", "Hasil Skor")
+            intent.putExtra("desc", "Data statistik login pengguna")
             startActivity(intent)
         }
 
-        // Tombol 3: Halaman Custom
+        // Tombol ke Custom Activity (Pertemuan 4)
         binding.btnKeCustom2.setOnClickListener {
             val intent = Intent(this, CustomActivity::class.java)
-            intent.putExtra("title", "Edukasi Keuangan")
-            intent.putExtra("desc", "Kenali mata uang kita untuk ekonomi yang lebih stabil")
-
+            intent.putExtra("title", "Custom View")
+            intent.putExtra("desc", "Materi belajar kustomisasi UI")
             startActivity(intent)
+        }
 
-            }
-        // Tombol 4: Logout dengan Alert Konfirmasi
+        // Tombol Logout Manual
         binding.btnLogout.setOnClickListener {
-            AlertDialog.Builder(this)
-                .setTitle("Logout")
-                .setMessage("Keluar dari aplikasi Bina Desa?")
-                .setPositiveButton("Ya") { _, _ ->
-                    val sharedPref = getSharedPreferences("user_pref",MODE_PRIVATE)
-                    sharedPref.edit().clear().apply() // Hapus semua session
+            finish()
+        }
+    }
 
-                    startActivity(Intent(this, AuthActivity::class.java))
-                    finish()
-                }
-                .setNegativeButton("Tidak", null)
-                .show()
+    // --- 3. PASANG MENU (Search & Settings) ---
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    // --- 4. HANDLE KLIK PADA MENU ---
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_search -> {
+                Toast.makeText(this, "Membuka Pencarian...", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.sub_profile -> {
+                Toast.makeText(this, "Membuka Edit Profil...", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.sub_theme -> {
+                Toast.makeText(this, "Pilih Tema Aplikasi...", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.sub_logout -> {
+                Toast.makeText(this, "Sesi Berakhir", Toast.LENGTH_SHORT).show()
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
-

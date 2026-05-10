@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.example.there_help.R // Pastikan import R ini ada
 import com.example.there_help.databinding.ActivityKalkulatorBinding
 
 class Kalkulator : AppCompatActivity() {
@@ -14,39 +15,46 @@ class Kalkulator : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        // 1. Inisialisasi Binding
         binding = ActivityKalkulatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Log LifeCycle: onCreate [cite: 1055]
-        Log.e("onCreate", "Kalkulator dibuat pertama kali")
+        // --- BAGIAN TOOLBAR (TUGAS NO 1) ---
+        setSupportActionBar(binding.toolbar) // Pasang Toolbar
 
-        // 2. Mengambil data Intent dari TombolActivity
+        // Mengambil data Intent untuk Judul & Deskripsi
         val judul = intent.getStringExtra("title")
         val deskripsi = intent.getStringExtra("desc")
 
-        // Tampilkan data ke TextView yang ada di layout
+        supportActionBar?.apply {
+            title = judul ?: "Kalkulator" // Judul Toolbar pakai data dari Intent
+            setDisplayHomeAsUpEnabled(true) // Aktifkan tombol back
+            setDisplayShowHomeEnabled(true)
+            setHomeAsUpIndicator(R.drawable.ic_arrow) // Pakai ikon kustommu
+        }
+        // ------------------------------------
+
+        Log.e("onCreate", "Kalkulator dibuat pertama kali")
+
+        // Tampilkan data ke TextView
         binding.tvJudul.text = judul
         binding.tvDeskripsi.text = deskripsi
 
-
         Log.e("Data Intent", "Judul: $judul, Deskripsi: $deskripsi")
 
-        // 3. Logika Hitung Luas Persegi
+        // Logika Hitung Luas Persegi
         binding.btnHitungPersegi.setOnClickListener {
             val sisiStr = binding.inputSisi.text.toString()
             if (sisiStr.isNotEmpty()) {
                 val sisi = sisiStr.toDouble()
                 val luas = sisi * sisi
                 binding.tvHasilPersegi.text = "Hasil Luas: $luas"
-
                 Toast.makeText(this, "Luas Persegi berhasil dihitung!", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Sisi tidak boleh kosong!", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // 4. Logika Hitung Volume Balok
+        // Logika Hitung Volume Balok
         binding.btnHitungBalok.setOnClickListener {
             val pStr = binding.inputPanjang.text.toString()
             val lStr = binding.inputLebar.text.toString()
@@ -55,7 +63,6 @@ class Kalkulator : AppCompatActivity() {
             if (pStr.isNotEmpty() && lStr.isNotEmpty() && tStr.isNotEmpty()) {
                 val volume = pStr.toDouble() * lStr.toDouble() * tStr.toDouble()
                 binding.tvHasilBalok.text = "Hasil Volume: $volume"
-
                 Log.i("LogKalkulator", "Hitung Balok berhasil. Volume: $volume")
                 Toast.makeText(this, "Volume Balok berhasil dihitung!", Toast.LENGTH_SHORT).show()
             } else {
@@ -64,7 +71,12 @@ class Kalkulator : AppCompatActivity() {
         }
     }
 
-    // Menambahkan LifeCycle Log sesuai Modul [cite: 1057-1064]
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
+    }
+
     override fun onStart() {
         super.onStart()
         Log.e("onStart", "onStart: Kalkulator terlihat di layar")

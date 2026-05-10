@@ -4,15 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bdbg">
-
-    <com.google.android.material.card.MaterialCardView
+    android:background="@drawable/bdbg"> <com.google.android.material.card.MaterialCardView
     android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="32dp"
+    android:layout_marginHorizontal="24dp"
     app:cardBackgroundColor="@color/bina_desa_dark_grey"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
+    app:strokeWidth="0dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -24,55 +23,125 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pengaduan dan Aspirasi Warga"
-            android:textColor="@color/bina_desa_red"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:layout_marginBottom="24dp">
 
-        <EditText
-            android:id="@+id/email"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Pengaduan dan\nAspirasi Warga"
+                android:textColor="@color/bina_desa_red"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Login"
+                android:textColor="@color/text_grey"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="24dp"
-            android:background="@color/bina_desa_input_black"
-            android:hint="Email"
-            android:paddingHorizontal="16dp"
-            android:textColor="@color/white"
-            android:textColorHint="#80FFFFFF" />
+            app:cardBackgroundColor="@color/bina_desa_input"
+            app:cardCornerRadius="8dp"
+            app:strokeWidth="0dp">
 
-        <EditText
-            android:id="@+id/editTextTextPassword"
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Email"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_grey" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
-            android:background="@color/bina_desa_input_black"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:paddingHorizontal="16dp"
-            android:textColor="@color/white"
-            android:textColorHint="#80FFFFFF" />
+            app:cardBackgroundColor="@color/bina_desa_input"
+            app:cardCornerRadius="8dp"
+            app:strokeWidth="0dp">
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/text_grey" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember me"
+                android:textColor="@color/text_grey"
+                android:textSize="12sp"
+                app:buttonTint="@color/bina_desa_red"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="Forgot Password"
+                android:textColor="@color/bina_desa_red"
+                android:textSize="12sp" />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/bina_desa_red"
             android:text="Log In"
             android:textAllCaps="false"
             android:textColor="@color/white"
+            android:textStyle="bold"
             app:cornerRadius="8dp" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Belum punya akun? Register"
-            android:textColor="@color/bina_desa_red" />
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum punya akun? "
+                android:textColor="@color/text_grey"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textColor="@color/bina_desa_red"
+                android:textSize="12sp" />
+        </LinearLayout>
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

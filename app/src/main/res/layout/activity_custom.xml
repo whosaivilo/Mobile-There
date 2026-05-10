@@ -1,182 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
-    android:padding="24dp"
+    android:background="@color/bina_desa_dark_grey"
     tools:context=".pertemuan_4.CustomActivity">
 
-    <TextView
-        android:id="@+id/tvJudulHalaman"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/header_edukasi"
-        android:textColor="@color/warning"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardProfile"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        app:cardCornerRadius="22.5dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/tvJudulHalaman"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvJudulHalaman">
-        <ImageView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/profil" />
-    </com.google.android.material.card.MaterialCardView>
-    <EditText
-        android:id="@+id/etSearch"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:background="@color/white"
-        android:hint="@string/hint_search"
-        android:paddingHorizontal="16dp"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tvJudulHalaman" />
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bina_desa_red"
+            app:titleTextColor="@color/white"
+            tools:title="Detail Materi" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardFeatured"
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:cardBackgroundColor="@color/warning"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp"
-        app:strokeWidth="0dp"
-        app:layout_constraintTop_toBottomOf="@id/etSearch">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="24dp">
 
             <TextView
-                android:id="@+id/tvFeaturedTitle"
-                android:layout_width="0dp"
+                android:id="@+id/tvJudulHalaman"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="100dp"
-                android:text="@string/placeholder_judul"
-                android:textColor="@color/white"
-                android:textSize="18sp"
+                android:text="@string/header_edukasi"
+                android:textColor="@color/bina_desa_red"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tvDescHalaman"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/placeholder_desc"
-                android:textColor="@color/white"
-                android:textSize="13sp"
-                app:layout_constraintEnd_toEndOf="@id/tvFeaturedTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvFeaturedTitle" />
-
-            <Button
-                android:id="@+id/btnMulaiBelajar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/white"
-                android:text="@string/btn_mulai"
-                android:textAllCaps="false"
-                android:textColor="@color/warning"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescHalaman" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/artikel2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/tvLabelArtikel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/label_artikel"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardFeatured" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardArtikel1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="2dp"
-        app:strokeWidth="0dp"
-        app:layout_constraintTop_toBottomOf="@id/tvLabelArtikel">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="12dp">
-
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/imgCont1"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:cardCornerRadius="12dp"
+                android:id="@+id/cardProfile"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="22.5dp"
                 app:cardElevation="0dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintBottom_toBottomOf="@id/tvJudulHalaman"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvJudulHalaman">
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/artikel" />
+                    android:src="@drawable/profil" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/bina_desa_input"
+                android:hint="@string/hint_search"
+                android:textColorHint="@color/text_grey"
+                android:textColor="@color/white"
+                android:paddingHorizontal="16dp"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvJudulHalaman" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardFeatured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/bina_desa_red"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:layout_constraintTop_toBottomOf="@id/etSearch">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tvFeaturedTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="100dp"
+                        android:text="@string/placeholder_judul"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvDescHalaman"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/placeholder_desc"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        android:alpha="0.9"
+                        app:layout_constraintEnd_toEndOf="@id/tvFeaturedTitle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvFeaturedTitle" />
+
+                    <Button
+                        android:id="@+id/btnMulaiBelajar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/white"
+                        android:text="@string/btn_mulai"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bina_desa_red"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDescHalaman" />
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/artikel2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/tvTitleArt1"
-                android:layout_width="0dp"
+                android:id="@+id/tvLabelArtikel"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="5 Cara Mengelola Stok"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:layout_marginTop="24dp"
+                android:text="@string/label_artikel"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/imgCont1"
-                app:layout_constraintTop_toTopOf="@id/imgCont1" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardFeatured" />
 
-            <TextView
-                android:layout_width="0dp"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardArtikel1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:alpha="0.7"
-                android:text="Optimasi inventori agar tidak rugi."
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@id/tvTitleArt1"
-                app:layout_constraintStart_toStartOf="@id/tvTitleArt1"
-                app:layout_constraintTop_toBottomOf="@id/tvTitleArt1" />
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/bina_desa_card"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLabelArtikel">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/imgCont1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/artikel" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tvTitleArt1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="5 Cara Mengelola Stok"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imgCont1"
+                        app:layout_constraintTop_toTopOf="@id/imgCont1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:alpha="0.7"
+                        android:text="Optimasi inventori agar tidak rugi."
+                        android:textColor="@color/text_grey"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="@id/tvTitleArt1"
+                        app:layout_constraintStart_toStartOf="@id/tvTitleArt1"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitleArt1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

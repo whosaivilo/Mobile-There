@@ -1,36 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg"
-    android:padding="24dp"
+    android:background="@color/bina_desa_dark_grey"
     tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bina_desa_dark_grey"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="24dp"
         android:text="@string/judulMain"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <TextView
         android:id="@+id/tvSubWelcome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="24dp"
         android:text="@string/subjudulMain"
-        android:textColor="@color/black"
+        android:textColor="@color/text_grey"
         android:textSize="14sp"
-        android:alpha="0.6"
+        android:alpha="0.8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
@@ -39,8 +58,9 @@
         android:id="@+id/btnKeKalkulator"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="@color/biru"
+        android:layout_marginTop="48dp"
+        android:layout_marginHorizontal="24dp"
+        android:backgroundTint="@color/bina_desa_red"
         android:text="@string/menu_kalkulator"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/tvSubWelcome" />
@@ -50,7 +70,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/biru"
+        android:layout_marginHorizontal="24dp"
+        android:backgroundTint="@color/bina_desa_red"
         android:text="@string/menu_skor"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/btnKeKalkulator" />
@@ -60,21 +81,33 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/biru"
+        android:layout_marginHorizontal="24dp"
+        android:backgroundTint="@color/bina_desa_red"
         android:text="@string/menu_custom"
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@+id/btnKeResult" />
 
     <Button
+        android:id="@+id/btnWebView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"
+        android:backgroundTint="@color/bina_desa_red"
+        android:text="Bina Desa Web"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btnKeCustom2" />
+
+    <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="200dp"
-        android:backgroundTint="@color/warning"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/status_proses"
         android:text="@string/btn_logout"
         android:textAllCaps="false"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/btnKeCustom2"
-        tools:layout_editor_absoluteX="24dp" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
