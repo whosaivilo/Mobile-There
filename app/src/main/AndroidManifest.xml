@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,22 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Therehelp">
         <activity
+            android:name=".BaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_5.FifthActivity"
+            android:name=".Home.pertemuan_5.FifthActivity"
             android:exported="false" />
         <activity
             android:name=".AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_4.CustomActivity"
+            android:name=".Home.pertemuan_4.CustomActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.LoginResultActivity"
+            android:name=".Home.pertemuan_3.LoginResultActivity"
             android:exported="false" />
         <activity
-            android:name=".tugasp2.Kalkulator"
+            android:name=".Home.tugasp2.Kalkulator"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"

@@ -11,7 +11,6 @@ import com.example.there_help.databinding.ActivityWebViewBinding
 
 class WebViewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWebViewBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWebViewBinding.inflate(layoutInflater)
@@ -24,7 +23,8 @@ class WebViewActivity : AppCompatActivity() {
 
         // 2. WebView Config
         binding.webView.apply {
-            settings.javaScriptEnabled = true // Wajib aktif untuk web modern
+            settings.javaScriptEnabled = true
+            settings.domStorageEnabled = true
             webViewClient = object : WebViewClient() {
                 override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                     binding.progressBar.visibility = View.VISIBLE
@@ -35,14 +35,11 @@ class WebViewActivity : AppCompatActivity() {
                 }
             }
 
-            // Improvisasi: Ambil judul otomatis dari website
             webChromeClient = object : WebChromeClient() {
                 override fun onReceivedTitle(view: WebView?, title: String?) {
                     supportActionBar?.title = title
                 }
             }
-
-            // Ganti dengan URL Bina Desa-mu cuq!
             loadUrl("https://pengaduan-admin.alwaysdata.net/")
         }
     }

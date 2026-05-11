@@ -9,9 +9,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.there_help.databinding.ActivityMainBinding
 // Import halaman lain jika beda folder (package)
-import com.example.there_help.tugasp2.Kalkulator
-import com.example.there_help.pertemuan_3.LoginResultActivity
-import com.example.there_help.pertemuan_4.CustomActivity
+import com.example.there_help.Home.tugasp2.Kalkulator
+import com.example.there_help.Home.pertemuan_3.LoginResultActivity
+import com.example.there_help.Home.pertemuan_4.CustomActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -61,9 +61,27 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        // Tombol Logout Manual
+        // Tombol Logout Manual (Sudah Diperbaiki)
         binding.btnLogout.setOnClickListener {
-            finish()
+            androidx.appcompat.app.AlertDialog.Builder(this)
+                .setTitle("Konfirmasi Logout")
+                .setMessage("Apakah Anda yakin ingin keluar dari aplikasi?")
+                .setPositiveButton("Ya, Keluar") { _, _ ->
+                    // 1. Hapus memori sesi login!
+                    val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+                    sharedPref.edit().clear().apply()
+
+                    // 2. Lempar balik ke halaman Login
+                    val intent = Intent(this, AuthActivity::class.java)
+                    startActivity(intent)
+
+                    // 3. Tutup halaman Dashboard ini
+                    finish()
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss() // Tutup dialog, nggak jadi logout
+                }
+                .show()
         }
     }
 

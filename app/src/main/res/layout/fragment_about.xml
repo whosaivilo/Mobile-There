@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bina_desa_dark_grey">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bina_desa_red"
+            app:titleTextColor="@color/white" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tentang Suara Warga"
+                android:textColor="@color/bina_desa_red"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Project Suara Warga dibangun untuk menampung aspirasi dan masukan dari warga secara terpusat, transparan, dan mudah dipantau."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fitur Utama Aplikasi:"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_white"
+                android:textSize="14sp"
+                android:lineSpacingExtra="6dp"
+                android:text="• Dashboard: Pantauan Total Pengaduan (Masuk, Belum Diproses, Selesai) &amp; Rata-rata Rating.\n• Statistik &amp; Grafik: Visualisasi data pengaduan menggunakan grafik Donut (Status) dan Bar Chart (Persebaran Wilayah RT/RW).\n• 5 Pengaduan Terbaru: Tabel ringkasan laporan masuk ter-update.\n• Daftar Pengaduan\n• Data Kategori\n• Penilaian Layanan\n• Tindak Lanjut\n• Data Warga &amp; User"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

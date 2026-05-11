@@ -15,8 +15,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:titleTextColor="@android:color/white" />
+            android:background="@color/bina_desa_red"
+            app:titleTextColor="@color/white" />
 
         <ProgressBar
             android:id="@+id/progressBar"

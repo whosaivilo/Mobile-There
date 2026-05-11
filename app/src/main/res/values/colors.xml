@@ -2,7 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="bina_desa_red">#E53935</color>
     <color name="bina_desa_dark">#1A1C1E</color>
     <color name="bina_desa_card">#212429</color>

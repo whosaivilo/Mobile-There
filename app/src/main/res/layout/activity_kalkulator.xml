@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bina_desa_dark_grey"
-    tools:context=".tugasp2.Kalkulator">
+    tools:context=".Home.tugasp2.Kalkulator">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"

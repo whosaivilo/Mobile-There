@@ -1,4 +1,4 @@
-package com.example.there_help.tugasp2
+package com.example.there_help.Home.tugasp2
 
 import android.os.Bundle
 import android.util.Log
