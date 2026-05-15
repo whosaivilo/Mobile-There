@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/bina_desa_dark_grey">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register with Gmail"
+        android:textColor="@color/bina_desa_red"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Silakan masukkan email Gmail Anda."
+        android:textColor="@color/text_grey"
+        android:textAlignment="center"
+        android:layout_marginBottom="24dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:textColorHint="@color/text_grey">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etInputGmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="contoh@gmail.com"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLanjutRegis"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/bina_desa_red"
+        android:text="Lanjut"
+        android:textAllCaps="false"
+        android:textStyle="bold" />
+
+</LinearLayout>
