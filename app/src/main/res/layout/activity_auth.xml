@@ -50,43 +50,50 @@
                 android:textSize="14sp" />
         </RelativeLayout>
 
-        <com.google.android.material.card.MaterialCardView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:cardBackgroundColor="@color/bina_desa_input"
-            app:cardCornerRadius="8dp"
-            app:strokeWidth="0dp">
-
-            <EditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:hint="Email"
-                android:paddingHorizontal="16dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/text_grey" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:cardBackgroundColor="@color/bina_desa_input"
-            app:cardCornerRadius="8dp"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="@color/bina_desa_input"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:hintEnabled="false"
+            app:strokeWidth="0dp"> <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email" android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:hint="Email"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="@color/bina_desa_input"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:hintEnabled="false"
             app:strokeWidth="0dp">
 
-            <EditText
-                android:id="@+id/editTextTextPassword"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:paddingHorizontal="16dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/text_grey" />
-        </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTextPassword" android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -122,6 +129,8 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             app:cornerRadius="8dp" />
+
+
         <Button
         android:id="@+id/btnRegisterGmail"
         android:layout_width="match_parent"

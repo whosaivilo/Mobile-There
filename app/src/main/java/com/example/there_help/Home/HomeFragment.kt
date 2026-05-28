@@ -7,12 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity // <-- Pastikan ini ter-import
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.there_help.AuthActivity
 import com.example.there_help.WebViewActivity
 import com.example.there_help.databinding.FragmentHomeBinding
-// Import folder yang udah dipindah tadi
 import com.example.there_help.Home.pertemuan_3.LoginResultActivity
 import com.example.there_help.Home.pertemuan_4.CustomActivity
 import com.example.there_help.Home.tugasp2.Kalkulator
@@ -32,12 +31,10 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // --- TAMBAHAN KODE TOOLBAR (Modul Hal 15) ---
         (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as AppCompatActivity).supportActionBar?.apply {
             title = "Home"
         }
-        // --------------------------------------------
 
         // Tombol ke WebView
         binding.btnWebView.setOnClickListener {
@@ -60,6 +57,10 @@ class HomeFragment : Fragment() {
         // Tombol ke Custom View
         binding.btnKeCustom2.setOnClickListener {
             val intent = Intent(requireContext(), CustomActivity::class.java)
+            startActivity(intent)
+        }
+        binding.btnBantuan.setOnClickListener {
+            val intent = Intent(requireContext(), HelpActivity::class.java)
             startActivity(intent)
         }
 
