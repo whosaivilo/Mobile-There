@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.there_help.AuthActivity
+import com.example.there_help.Home.pertemuan_10.TenthActivity
 import com.example.there_help.WebViewActivity
 import com.example.there_help.databinding.FragmentHomeBinding
 import com.example.there_help.Home.pertemuan_3.LoginResultActivity
@@ -63,6 +64,11 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), HelpActivity::class.java)
             startActivity(intent)
         }
+        binding.btnPertemuan10.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
 
         // Tombol Logout (Pakai requireActivity().finish() sesuai modul hal 14)
         binding.btnLogout.setOnClickListener {
@@ -80,6 +86,7 @@ class HomeFragment : Fragment() {
                 .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
                 .show()
         }
+
     }
 
     override fun onDestroyView() {

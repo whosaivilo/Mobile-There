@@ -14,12 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Therehelp">
         <activity
+            android:name=".Home.pertemuan_10.TenthActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home.HelpActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".InputEmailActivity"
             android:exported="false" />
