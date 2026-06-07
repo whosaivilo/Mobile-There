@@ -1,6 +1,5 @@
-package com.example.there_help
+package com.example.there_help.Auth
 
-import android.content.Context
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -44,7 +43,7 @@ class RegisterActivity : AppCompatActivity() {
 
             if (isValid) {
                 // Simpan ke SharedPreferences
-                val sharedPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+                val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putString("REG_USERNAME", username)
                 editor.putString("REG_PASSWORD", password)

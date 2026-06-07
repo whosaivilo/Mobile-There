@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.there_help.AuthActivity
+import com.example.there_help.Auth.AuthActivity
 import com.example.there_help.Home.pertemuan_10.TenthActivity
 import com.example.there_help.WebViewActivity
 import com.example.there_help.databinding.FragmentHomeBinding

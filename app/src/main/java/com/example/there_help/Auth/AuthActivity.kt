@@ -1,13 +1,14 @@
-package com.example.there_help
+package com.example.there_help.Auth
 
+import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.there_help.BaseActivity
 import com.example.there_help.databinding.ActivityAuthBinding
-import kotlin.jvm.java
 
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
@@ -51,7 +52,7 @@ class AuthActivity : AppCompatActivity() {
                     .setTitle("Login Gagal")
                     .setMessage("Email atau password salah. Pastikan email dan password sama!")
                     .setPositiveButton("Coba Lagi", null)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setIcon(R.drawable.ic_dialog_alert)
                     .show()
             }
         }

@@ -1,4 +1,4 @@
-package com.example.there_help
+package com.example.there_help.Auth
 
 import android.content.Intent
 import android.os.Bundle
