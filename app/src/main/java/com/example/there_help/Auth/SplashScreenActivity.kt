@@ -23,15 +23,12 @@ class SplashScreenActivity : AppCompatActivity() {
 
             val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
-            val isFirstTime = sharedPref.getBoolean("isFirstTime", true)
 
 
             val targetActivity = if (isLogin) {
                 BaseActivity::class.java
-            } else if (isFirstTime) {
-                OnboardingActivity::class.java
             } else {
-                AuthActivity::class.java
+                OnboardingActivity::class.java
             }
 
             // Eksekusi perpindahan halaman
