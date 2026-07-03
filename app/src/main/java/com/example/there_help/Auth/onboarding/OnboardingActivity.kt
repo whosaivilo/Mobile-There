@@ -24,7 +24,6 @@ class OnboardingActivity : AppCompatActivity() {
             insets
         }
 
-        // Kumpulkan 3 fragment tutorial onboarding
         val fragmentsList = listOf(
             Onboarding1Fragment(),
             Onboarding2Fragment(),
@@ -35,7 +34,6 @@ class OnboardingActivity : AppCompatActivity() {
         val adapter = OnboardingAdapter(this, fragmentsList)
         binding.viewPagerOnboarding.adapter = adapter
 
-        // Gandengkan indicator bulat-bulat bawaan library lu
         binding.dotIndicator.attachTo(binding.viewPagerOnboarding)
     }
 }

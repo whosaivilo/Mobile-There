@@ -20,10 +20,8 @@ class SplashScreenActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(2000) // Delay splash screen 2 detik
 
-
             val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             val isLogin = sharedPref.getBoolean("isLogin", false)
-
 
             val targetActivity = if (isLogin) {
                 BaseActivity::class.java

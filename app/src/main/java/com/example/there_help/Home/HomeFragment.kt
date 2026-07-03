@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.there_help.Auth.AuthActivity
+import com.example.there_help.FormPengaduanActivity
 import com.example.there_help.Home.pertemuan_10.BeritaAdapter
 import com.example.there_help.Home.pertemuan_10.TenthActivity
 import com.example.there_help.Home.pertemuan_3.LoginResultActivity
@@ -21,6 +22,8 @@ import com.example.there_help.Home.tugasp2.Kalkulator
 import com.example.there_help.WebViewActivity
 import com.example.there_help.data.api.BeritaApiClient
 import com.example.there_help.databinding.FragmentHomeBinding
+import com.example.there_help.utils.NotificationHelper
+import com.example.there_help.utils.ReminderHelper
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -47,9 +50,7 @@ class HomeFragment : Fragment() {
 
         loadBeritaHome()
 
-
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
-
 
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
@@ -68,7 +69,6 @@ class HomeFragment : Fragment() {
                 .setNegativeButton("Tidak", null)
                 .show()
         }
-
 
         // Tombol Kalkulator
         binding.btnKeKalkulator.setOnClickListener {
@@ -96,12 +96,38 @@ class HomeFragment : Fragment() {
         // Tombol Pusat Bantuan
         binding.btnBantuan.setOnClickListener {
             // Jika HelpActivity ada di folder root/lainnya, pastikan import-nya aman cuq
-            startActivity(Intent(requireContext(), HelpActivity::class.java))
+            // startActivity(Intent(requireContext(), HelpActivity::class.java))
         }
 
         // Tombol Tab Layout (Materi Pertemuan 10)
         binding.btnPertemuan10.setOnClickListener {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
+        }
+
+        binding.btnTesNotif.setOnClickListener {
+
+            // Bikin kendaraan buat pindah ke halaman Form Pengaduan
+            val intentTujuan = Intent(requireContext(), FormPengaduanActivity::class.java)
+
+            startActivity(intentTujuan)
+
+            // 2. Notifikasi tetep jalan
+            NotificationHelper.showNotification(
+                context = requireContext(),
+                title = "Layanan Pengaduan",
+                message = "Silakan isi laporan di sini!",
+                intent = intentTujuan
+            )
+
+            // 3. Alarm tetep jalan
+            ReminderHelper.setReminder(
+                context = requireContext(),
+                hour = 1,
+                minute = 30,
+                title = "Waktu Pengaduan!",
+                message = "Udah 1 menit nih, ayo selesain laporannya!",
+                targetActivity = FormPengaduanActivity::class.java
+            )
         }
     }
 
@@ -111,7 +137,7 @@ class HomeFragment : Fragment() {
                 val response = BeritaApiClient.apiService.getBerita()
                 val beritaList = response.articles ?: emptyList()
 
-                // 2. Inisialisasi adapter berita dengan data dari server
+                // Inisialisasi adapter berita dengan data dari server
                 val adapter = BeritaAdapter(beritaList)
 
                 binding.rvBeritaHome.adapter = adapter

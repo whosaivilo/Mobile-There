@@ -8,7 +8,6 @@ import com.example.there_help.data.model.BeritaModel
 import com.example.there_help.databinding.ItemBeritaBinding
 
 class BeritaAdapter(private val items: List<BeritaModel>) : RecyclerView.Adapter<BeritaAdapter.BeritaViewHolder>() {
-
     inner class BeritaViewHolder(val binding: ItemBeritaBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BeritaViewHolder {

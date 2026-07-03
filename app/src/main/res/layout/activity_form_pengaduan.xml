@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Judul Halaman -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Form Pengaduan Warga"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Kolom Input Laporan -->
+    <EditText
+        android:id="@+id/edtLaporan"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:hint="Tulis detail keluhan atau laporan Anda di sini..."
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:background="@android:drawable/edit_text"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Label Input Waktu -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingatkan saya untuk cek status dalam (Menit):"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Kolom Input Waktu Reminder -->
+    <EditText
+        android:id="@+id/edtMenit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contoh: 5"
+        android:inputType="number"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Tombol Kirim -->
+    <Button
+        android:id="@+id/btnKirim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kirim Pengaduan &amp; Set Pengingat"/>
+
+</LinearLayout>

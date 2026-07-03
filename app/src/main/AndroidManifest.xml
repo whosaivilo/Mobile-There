@@ -4,6 +4,16 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+
+    <!-- TAMBAHIN INI JIRT BUAT KAMERA -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,68 +24,65 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Therehelp">
 
+        <receiver
+            android:name=".utils.ReminderReceiver"
+            android:exported="false"/>
+
+        <activity
+            android:name=".FormPengaduanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RingkasanPengaduanActivity"
+            android:exported="false" />
+
         <activity
             android:name=".Auth.onboarding.OnboardingActivity"
             android:exported="false" />
-
         <activity
             android:name=".Auth.AuthActivity"
             android:exported="false" />
-
         <activity
             android:name=".Auth.RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".Auth.InputEmailActivity"
             android:exported="false" />
-
         <activity
             android:name=".Auth.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".Home.pertemuan_10.TenthActivity"
             android:exported="false" />
-
         <activity
             android:name=".Home.HelpActivity"
             android:exported="false" />
-
         <activity
             android:name=".Home.pertemuan_5.FifthActivity"
             android:exported="false" />
-
         <activity
             android:name=".Home.pertemuan_4.CustomActivity"
             android:exported="false" />
-
         <activity
             android:name=".Home.pertemuan_3.LoginResultActivity"
             android:exported="false" />
-
         <activity
             android:name=".Home.tugasp2.Kalkulator"
             android:exported="false" />
-
-
         <activity
             android:name=".BaseActivity"
             android:exported="false" />
-
         <activity
             android:name=".WebViewActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
     </application>
+
 </manifest>
