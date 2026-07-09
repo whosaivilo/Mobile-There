@@ -1,5 +1,4 @@
 package com.example.there_help.Auth
-
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

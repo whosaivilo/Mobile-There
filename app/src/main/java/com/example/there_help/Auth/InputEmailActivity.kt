@@ -15,27 +15,25 @@ class InputEmailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLanjutRegis.setOnClickListener {
-            val email = binding.etInputGmail.text.toString().trim()
+            // 1. Ambil ketikan pengguna (hanya nama depannya saja)
+            val inputPrefix = binding.etInputGmail.text.toString().trim()
 
-            // Validasi: Kosong ATAU tidak diakhiri dengan @gmail.com
-            if (email.isEmpty() || !email.endsWith("@gmail.com")) {
-
-                // Tampilkan error dengan MaterialAlertDialog sesuai Soal 1
-                MaterialAlertDialogBuilder(this)
-                    .setTitle("Validasi Gagal")
-                    .setMessage("Email tidak boleh kosong dan wajib menggunakan domain @gmail.com!")
-                    .setPositiveButton("Mengerti") { dialog, _ ->
-                        dialog.dismiss()
-                    }
-                    .show()
-
-            } else {
-                // Jika valid, lempar ke RegisterActivity dan bawa datanya
-                val intent = Intent(this, RegisterActivity::class.java)
-                intent.putExtra("EMAIL_GMAIL", email)
-                startActivity(intent)
-                finish() // Tutup halaman input email
+            if (inputPrefix.isEmpty()) {
+                binding.etInputGmail.error = "Email wajib diisi"
+                return@setOnClickListener
             }
+
+            // 2. Trik Opsional: Mencegah error jika pengguna "bandel" tetap mengetik @gmail.com
+            // Ini akan menghapus @gmail.com jika pengguna terlanjur mengetiknya
+            val prefixBersih = inputPrefix.removeSuffix("@gmail.com")
+
+            // 3. Gabungkan nama depan dengan domain secara manual
+            val emailFull = "$prefixBersih@gmail.com"
+
+            // 4. Kirim email yang sudah utuh ke RegisterActivity
+            val intent = Intent(this, RegisterActivity::class.java)
+            intent.putExtra("EMAIL_GMAIL", emailFull)
+            startActivity(intent)
         }
     }
 }

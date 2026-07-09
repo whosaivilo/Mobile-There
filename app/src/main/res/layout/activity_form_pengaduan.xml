@@ -1,53 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:background="@color/bina_desa_dark_grey">
 
-    <!-- Judul Halaman -->
-    <TextView
+    <!-- Toolbar Merah dengan Tombol Back -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Form Pengaduan Warga"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bina_desa_red"
+        app:title="Form Pengaduan Warga"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator" />
 
-    <!-- Kolom Input Laporan -->
-    <EditText
-        android:id="@+id/edtLaporan"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:hint="Tulis detail keluhan atau laporan Anda di sini..."
-        android:gravity="top"
-        android:inputType="textMultiLine"
-        android:background="@android:drawable/edit_text"
-        android:padding="12dp"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <!-- Label Input Waktu -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ingatkan saya untuk cek status dalam (Menit):"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        <!-- INI DIA TRIKNYA! Kita kasih tema Dark biar border & textnya auto putih -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:theme="@style/ThemeOverlay.MaterialComponents.Dark">
 
-    <!-- Kolom Input Waktu Reminder -->
-    <EditText
-        android:id="@+id/edtMenit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contoh: 5"
-        android:inputType="number"
-        android:layout_marginBottom="24dp"/>
+            <!-- Input Nama -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Pengadu">
 
-    <!-- Tombol Kirim -->
-    <Button
-        android:id="@+id/btnKirim"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Kirim Pengaduan &amp; Set Pengingat"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_white" />
+            </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Dropdown Kategori Pengaduan -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Kategori Pengaduan"
+                app:hintTextColor="@color/white">
+
+                <!-- Tambahin popupBackground warna card biar listnya punya background gelap -->
+                <AutoCompleteTextView
+                    android:id="@+id/tvKategori"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="@color/white"
+                    android:popupBackground="@color/bina_desa_card" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Input Isi Pengaduan -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Isi Laporan">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etIsiPengaduan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="4"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/text_white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Input Menit Pengingat (Reminder) -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Ingatkan saya cek status dalam (Menit)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMenit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textColor="@color/text_white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <!-- Tombol Simpan -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSimpanPengaduan"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:backgroundTint="@color/bina_desa_red"
+                android:text="Kirim Pengaduan dan Set Pengingat"
+                android:textColor="@color/white"
+                app:cornerRadius="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

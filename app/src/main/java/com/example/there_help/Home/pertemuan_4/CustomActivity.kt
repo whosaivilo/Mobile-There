@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.there_help.R // Pastikan import ini ada untuk memanggil ic_arrow
+import com.example.there_help.R
 import com.example.there_help.databinding.ActivityCustomBinding
 
 class CustomActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCustomBinding
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("Lifecycle", "CustomActivity: onStart dipanggil")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,12 +23,12 @@ class CustomActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        // Nangkap data dari HomeFragment
         val judul = intent.getStringExtra("title")
         val deskripsi = intent.getStringExtra("desc")
 
         supportActionBar?.apply {
-            // Jika judul dari intent ada, pakai itu. Jika tidak, pakai "Materi"
-            title = judul ?: "Detail Materi"
+            title = "Detail Materi"
 
             setDisplayHomeAsUpEnabled(true) // Munculkan tombol back
             setDisplayShowHomeEnabled(true)
@@ -31,15 +36,16 @@ class CustomActivity : AppCompatActivity() {
         }
         // -----------------------------------------
 
-        binding.tvJudulHalaman.text = judul
-        binding.tvDescHalaman.text = deskripsi
+        // Data dari putExtra tetep masuk ke layar halaman lu
+        binding.tvJudulHalaman.text = judul ?: "Detail Materi"
+        binding.tvDescHalaman.text = deskripsi ?: "Deskripsi tidak tersedia"
 
         binding.btnMulaiBelajar.setOnClickListener {
-            Toast.makeText(this, "Memulai materi: $judul", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Memulai materi: ${judul ?: "Materi"}", Toast.LENGTH_SHORT).show()
         }
     }
 
-    // WAJIB: Logika agar tombol back (panah) beneran bisa diklik
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressedDispatcher.onBackPressed()
         return true

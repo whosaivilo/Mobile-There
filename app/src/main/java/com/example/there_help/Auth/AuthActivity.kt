@@ -39,6 +39,7 @@ class AuthActivity : AppCompatActivity() {
                 val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
+                editor.putString("username", userEmail)
                 editor.apply()
                 Toast.makeText(this, "Login Berhasil, Selamat Datang!", Toast.LENGTH_SHORT).show()
 

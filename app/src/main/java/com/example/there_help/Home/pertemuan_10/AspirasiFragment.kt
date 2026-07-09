@@ -46,11 +46,9 @@ class AspirasiFragment : Fragment() {
         }
 
         binding.rvAspirasi.apply {
-            layoutManager = GridLayoutManager(requireContext(), 1)
-
+            layoutManager = GridLayoutManager(requireContext(), 2)
             /** Jika ingin model Linear **/
             // layoutManager = LinearLayoutManager(requireContext())
-
             this.adapter = adapter
         }
     }

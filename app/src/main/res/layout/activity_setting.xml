@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- Komponen Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#E53935"
+        app:titleTextColor="@android:color/white" />
+
+    <!-- Komponen Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Grup Pengaturan 1: Koneksi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Koneksi &amp; Jaringan"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Penggunaan Data"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Grup Pengaturan 2: Suara & Tampilan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Notifikasi"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Suara &amp; Getaran"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Layar Utama &amp; Tema"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Grup Pengaturan 3: Privasi & Keamanan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Keamanan Akun"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Izin Aplikasi"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Grup Pengaturan 4: Akun & Sinkronisasi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Akun Bina Desa"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sinkronisasi Data"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Grup Pengaturan 5: Sistem -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bahasa &amp; Wilayah"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aksesibilitas"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Grup Pengaturan 6: Tentang Aplikasi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp"
+                android:layout_marginBottom="32dp"> <!-- Margin bawah ekstra -->
+
+                <!-- TAMBAHKAN ID DI SINI -->
+                <TextView
+                    android:id="@+id/tvPusatBantuan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pusat Bantuan"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold"/>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#E0E0E0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tentang Suara Warga"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:padding="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

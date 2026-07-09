@@ -48,9 +48,12 @@ class Kalkulator : AppCompatActivity() {
                 val sisi = sisiStr.toDouble()
                 val luas = sisi * sisi
                 binding.tvHasilPersegi.text = "Hasil Luas: $luas"
-                Toast.makeText(this, "Luas Persegi berhasil dihitung!", Toast.LENGTH_SHORT).show()
+                Log.e("LogKalkulator", "Hitung Persegi berhasil. Volume: $luas")
+                Toast.makeText(this, "Luas Persegi berhasil dihitung!",
+                    Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Sisi tidak boleh kosong!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Sisi tidak boleh kosong!",
+                    Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -63,7 +66,7 @@ class Kalkulator : AppCompatActivity() {
             if (pStr.isNotEmpty() && lStr.isNotEmpty() && tStr.isNotEmpty()) {
                 val volume = pStr.toDouble() * lStr.toDouble() * tStr.toDouble()
                 binding.tvHasilBalok.text = "Hasil Volume: $volume"
-                Log.i("LogKalkulator", "Hitung Balok berhasil. Volume: $volume")
+                Log.e("LogKalkulator", "Hitung Balok berhasil. Volume: $volume")
                 Toast.makeText(this, "Volume Balok berhasil dihitung!", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(this, "Semua input balok harus diisi!", Toast.LENGTH_SHORT).show()

@@ -15,8 +15,12 @@ class ReminderHelper {
             minute: Int,
             title: String,
             message: String,
-            targetActivity: Class<*>
+            targetActivity: Class<*>,
+            nama: String,
+            kategori: String,
+            isiLaporan: String
         ) {
+
             val calendar = Calendar.getInstance().apply {
                 set(Calendar.HOUR_OF_DAY, hour)
                 set(Calendar.MINUTE, minute)
@@ -30,11 +34,14 @@ class ReminderHelper {
                 putExtra("title", title)
                 putExtra("message", message)
                 putExtra("target_activity", targetActivity.name)
+                putExtra("EXTRA_NAMA", nama)
+                putExtra("EXTRA_KATEGORI", kategori)
+                putExtra("EXTRA_ISI", isiLaporan)
             }
-
+            val requestCode = System.currentTimeMillis().toInt()
             val pendingIntent = PendingIntent.getBroadcast(
                 context,
-                0,
+                requestCode,
                 intent,
                 PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
             )

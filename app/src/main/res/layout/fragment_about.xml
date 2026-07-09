@@ -1,68 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/bina_desa_dark_grey">
+    android:background="#1A1A1A"> <!-- Sesuaikan dengan warna background gelap Anda -->
 
-    <com.google.android.material.appbar.AppBarLayout
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/bina_desa_red"
-            app:titleTextColor="@color/white" />
-    </com.google.android.material.appbar.AppBarLayout>
+        android:layout_height="?attr/actionBarSize"
+        android:background="#E53935"
+        app:titleTextColor="@android:color/white" />
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:text="Tentang Suara Warga"
+            android:textColor="#E53935"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tentang Suara Warga"
-                android:textColor="@color/bina_desa_red"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Project Suara Warga dibangun untuk menampung aspirasi dan masukan dari warga secara terpusat, transparan, dan mudah dipantau."
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Project Suara Warga dibangun untuk menampung aspirasi dan masukan dari warga secara terpusat, transparan, dan mudah dipantau."
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:lineSpacingExtra="4dp"
-                android:layout_marginBottom="24dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fitur Utama Aplikasi:"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Fitur Utama Aplikasi:"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp"/>
+        <!-- Ini adalah ListView yang akan diisi oleh ArrayAdapter -->
+        <ListView
+            android:id="@+id/listViewFitur"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_white"
-                android:textSize="14sp"
-                android:lineSpacingExtra="6dp"
-                android:text="• Dashboard: Pantauan Total Pengaduan (Masuk, Belum Diproses, Selesai) &amp; Rata-rata Rating.\n• Statistik &amp; Grafik: Visualisasi data pengaduan menggunakan grafik Donut (Status) dan Bar Chart (Persebaran Wilayah RT/RW).\n• 5 Pengaduan Terbaru: Tabel ringkasan laporan masuk ter-update.\n• Daftar Pengaduan\n• Data Kategori\n• Penilaian Layanan\n• Tindak Lanjut\n• Data Warga &amp; User"/>
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 </LinearLayout>

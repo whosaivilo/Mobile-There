@@ -1,14 +1,15 @@
 <resources>
-    <string name="app_name">there-help</string>
+    <string name="app_name">Suara Warga</string>
 
-    <string name="judul_login">Selamat Datang</string>
-    <string name="desc_login">Masukkan Username dan Password Anda</string>
-    <string name="label_uname">Username</string>
-    <string name="hint_uname">Masukkan Username Anda</string>
-    <string name="label_pass">Password</string>
-    <string name="lupa_pass">Lupa password?</string>
-    <string name="btn_login">Login</string>
-    <string name="btn_google">Lanjutkan dengan Google</string>
+    <string name="judul_login">Pengaduan dan\nAspirasi Warga</string>
+    <string name="tab_login">Login</string>
+    <string name="hint_email">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="lupa_pass">Forgot Password</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_google">Register With Gmail</string>
+    <string name="tanya_akun">Belum punya akun? </string>
     <string name="regis">Register</string>
 
     <string name="judulMain">Halo! Selamat Datang</string>

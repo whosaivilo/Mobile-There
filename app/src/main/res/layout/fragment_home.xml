@@ -16,15 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent"
-        app:titleTextColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/tvWelcome"
@@ -143,18 +134,9 @@
                     android:backgroundTint="@color/bina_desa_red"
                     android:text="Bina Desa Web"
                     app:cornerRadius="16dp"
-                    app:layout_columnWeight="1"
-                    app:layout_gravity="fill" />
+                app:layout_columnWeight="1"
+                app:layout_gravity="fill" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnBantuan"
-                    android:layout_width="0dp"
-                    android:layout_height="65dp"
-                    android:backgroundTint="@color/bina_desa_red"
-                    android:text="Pusat Bantuan"
-                    app:cornerRadius="16dp"
-                    app:layout_columnWeight="1"
-                    app:layout_gravity="fill" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnPertemuan10"
@@ -172,6 +154,16 @@
                     android:layout_height="65dp"
                     android:backgroundTint="@color/bina_desa_red"
                     android:text="Form Pengaduan"
+                    app:cornerRadius="16dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCamera"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:backgroundTint="@color/bina_desa_red"
+                    android:text="Camera"
                     app:cornerRadius="16dp"
                     app:layout_columnWeight="1"
                     app:layout_gravity="fill" />
@@ -204,7 +196,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:nestedScrollingEnabled="false"
                 tools:listitem="@layout/item_berita" />
 
         </LinearLayout>

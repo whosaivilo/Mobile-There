@@ -3,16 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
-    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
-
-    <!-- TAMBAHIN INI JIRT BUAT KAMERA -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
 
-
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -23,10 +21,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Therehelp">
+        <activity
+            android:name=".DetailPengaduanActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".Home.pertemuan_13.ThirteenthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Profile.SettingActivity"
+            android:exported="false" />
 
         <receiver
             android:name=".utils.ReminderReceiver"
-            android:exported="false"/>
+            android:exported="false" />
 
         <activity
             android:name=".FormPengaduanActivity"
@@ -34,7 +52,6 @@
         <activity
             android:name=".RingkasanPengaduanActivity"
             android:exported="false" />
-
         <activity
             android:name=".Auth.onboarding.OnboardingActivity"
             android:exported="false" />

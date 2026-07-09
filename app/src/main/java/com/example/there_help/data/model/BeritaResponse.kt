@@ -10,6 +10,7 @@ data class BeritaResponse(
 
 data class BeritaModel(
     val title: String?,
+    val tanggal: String?,
     val description: String?,
     val urlToImage: String?
 )
